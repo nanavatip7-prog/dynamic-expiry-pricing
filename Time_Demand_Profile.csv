@@ -1,0 +1,67 @@
+category,time_slot,day_type,base_demand_multiplier
+Fruits & Vegetables,Morning,Weekday,1.05
+Fruits & Vegetables,Afternoon,Weekday,1.04
+Fruits & Vegetables,Night,Weekday,0.96
+Fruits & Vegetables,Morning,Weekend,0.88
+Fruits & Vegetables,Afternoon,Weekend,1.05
+Fruits & Vegetables,Night,Weekend,1.01
+Dairy & Breakfast,Morning,Weekday,1.08
+Dairy & Breakfast,Afternoon,Weekday,1.01
+Dairy & Breakfast,Night,Weekday,1.11
+Dairy & Breakfast,Morning,Weekend,1.02
+Dairy & Breakfast,Afternoon,Weekend,1.02
+Dairy & Breakfast,Night,Weekend,1.11
+Snacks & Munchies,Morning,Weekday,0.97
+Snacks & Munchies,Afternoon,Weekday,0.89
+Snacks & Munchies,Night,Weekday,0.86
+Snacks & Munchies,Morning,Weekend,1.08
+Snacks & Munchies,Afternoon,Weekend,1.04
+Snacks & Munchies,Night,Weekend,1.06
+Cold Drinks & Juices,Morning,Weekday,0.91
+Cold Drinks & Juices,Afternoon,Weekday,0.89
+Cold Drinks & Juices,Night,Weekday,0.85
+Cold Drinks & Juices,Morning,Weekend,0.96
+Cold Drinks & Juices,Afternoon,Weekend,1.03
+Cold Drinks & Juices,Night,Weekend,0.97
+Instant & Frozen Food,Morning,Weekday,0.98
+Instant & Frozen Food,Afternoon,Weekday,1.12
+Instant & Frozen Food,Night,Weekday,0.95
+Instant & Frozen Food,Morning,Weekend,1.0
+Instant & Frozen Food,Afternoon,Weekend,1.09
+Instant & Frozen Food,Night,Weekend,0.97
+Grocery & Staples,Morning,Weekday,1.04
+Grocery & Staples,Afternoon,Weekday,1.11
+Grocery & Staples,Night,Weekday,1.13
+Grocery & Staples,Morning,Weekend,0.89
+Grocery & Staples,Afternoon,Weekend,1.13
+Grocery & Staples,Night,Weekend,1.0
+Household Care,Morning,Weekday,0.93
+Household Care,Afternoon,Weekday,0.99
+Household Care,Night,Weekday,1.14
+Household Care,Morning,Weekend,1.0
+Household Care,Afternoon,Weekend,0.95
+Household Care,Night,Weekend,1.04
+Personal Care,Morning,Weekday,0.92
+Personal Care,Afternoon,Weekday,0.87
+Personal Care,Night,Weekday,0.89
+Personal Care,Morning,Weekend,0.89
+Personal Care,Afternoon,Weekend,0.9
+Personal Care,Night,Weekend,0.89
+Baby Care,Morning,Weekday,1.04
+Baby Care,Afternoon,Weekday,0.9
+Baby Care,Night,Weekday,0.95
+Baby Care,Morning,Weekend,1.12
+Baby Care,Afternoon,Weekend,0.99
+Baby Care,Night,Weekend,1.05
+Pet Care,Morning,Weekday,0.9
+Pet Care,Afternoon,Weekday,0.91
+Pet Care,Night,Weekday,0.86
+Pet Care,Morning,Weekend,0.9
+Pet Care,Afternoon,Weekend,0.93
+Pet Care,Night,Weekend,0.9
+Pharmacy,Morning,Weekday,0.88
+Pharmacy,Afternoon,Weekday,0.89
+Pharmacy,Night,Weekday,0.99
+Pharmacy,Morning,Weekend,0.91
+Pharmacy,Afternoon,Weekend,0.96
+Pharmacy,Night,Weekend,1.0

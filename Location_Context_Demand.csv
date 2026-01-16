@@ -1,0 +1,45 @@
+store_id,city,area_type,category,festival_flag,weather_type,demand_multiplier
+PUNE_01,Pune,Residential,Fruits & Vegetables,0,Cold,1.16
+PUNE_01,Pune,Residential,Dairy & Breakfast,0,Cold,1.14
+PUNE_01,Pune,Residential,Snacks & Munchies,0,Hot,1.23
+PUNE_01,Pune,Residential,Cold Drinks & Juices,0,Cold,0.98
+PUNE_01,Pune,Commercial,Instant & Frozen Food,0,Rainy,1.11
+PUNE_01,Pune,Commercial,Grocery & Staples,0,Hot,1.18
+PUNE_01,Pune,Residential,Household Care,0,Cold,0.97
+PUNE_01,Pune,Residential,Personal Care,0,Cold,1.16
+PUNE_01,Pune,Commercial,Baby Care,0,Cold,0.96
+PUNE_01,Pune,Commercial,Pet Care,0,Hot,1.07
+PUNE_01,Pune,Residential,Pharmacy,0,Cold,1.0
+PUNE_02,Pune,Commercial,Fruits & Vegetables,0,Hot,0.98
+PUNE_02,Pune,Residential,Dairy & Breakfast,0,Cold,1.05
+PUNE_02,Pune,Commercial,Snacks & Munchies,0,Cold,1.14
+PUNE_02,Pune,Residential,Cold Drinks & Juices,1,Hot,1.17
+PUNE_02,Pune,Commercial,Instant & Frozen Food,0,Rainy,1.12
+PUNE_02,Pune,Commercial,Grocery & Staples,0,Cold,1.22
+PUNE_02,Pune,Residential,Household Care,1,Hot,1.25
+PUNE_02,Pune,Commercial,Personal Care,0,Rainy,0.98
+PUNE_02,Pune,Commercial,Baby Care,1,Cold,1.01
+PUNE_02,Pune,Residential,Pet Care,0,Hot,1.2
+PUNE_02,Pune,Residential,Pharmacy,1,Cold,1.24
+MUM_01,Mumbai,Commercial,Fruits & Vegetables,1,Rainy,1.21
+MUM_01,Mumbai,Residential,Dairy & Breakfast,1,Rainy,1.0
+MUM_01,Mumbai,Commercial,Snacks & Munchies,0,Hot,1.12
+MUM_01,Mumbai,Commercial,Cold Drinks & Juices,1,Cold,1.18
+MUM_01,Mumbai,Commercial,Instant & Frozen Food,0,Cold,1.01
+MUM_01,Mumbai,Commercial,Grocery & Staples,0,Hot,1.16
+MUM_01,Mumbai,Residential,Household Care,0,Cold,1.1
+MUM_01,Mumbai,Commercial,Personal Care,0,Rainy,1.13
+MUM_01,Mumbai,Commercial,Baby Care,1,Hot,1.11
+MUM_01,Mumbai,Commercial,Pet Care,0,Hot,1.16
+MUM_01,Mumbai,Residential,Pharmacy,0,Rainy,0.95
+MUM_02,Mumbai,Commercial,Fruits & Vegetables,0,Hot,1.07
+MUM_02,Mumbai,Commercial,Dairy & Breakfast,0,Hot,1.2
+MUM_02,Mumbai,Residential,Snacks & Munchies,0,Cold,1.17
+MUM_02,Mumbai,Commercial,Cold Drinks & Juices,1,Hot,0.97
+MUM_02,Mumbai,Residential,Instant & Frozen Food,1,Rainy,0.99
+MUM_02,Mumbai,Residential,Grocery & Staples,1,Cold,1.2
+MUM_02,Mumbai,Commercial,Household Care,0,Hot,1.14
+MUM_02,Mumbai,Commercial,Personal Care,1,Cold,1.13
+MUM_02,Mumbai,Commercial,Baby Care,0,Rainy,1.16
+MUM_02,Mumbai,Residential,Pet Care,0,Hot,1.11
+MUM_02,Mumbai,Residential,Pharmacy,0,Rainy,1.06

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Expiry Pricing System</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f7fa;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      max-width: 520px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      font-size: 20px;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🛒 Dynamic Expiry Pricing System</h1>
+
+<div class="card">
+  <h2>Enter Product Details</h2>
+
+  <label>Days to Expiry</label>
+  <input type="number" id="expiryDays" placeholder="e.g. 3">
+
+  <label>Category</label>
+  <select id="category" onchange="updateProducts()">
+    <option value="dairy">Dairy</option>
+    <option value="bakery">Bakery</option>
+    <option value="produce">Produce</option>
+    <option value="packaged">Packaged</option>
+  </select>
+
+  <label>Product</label>
+  <select id="product"></select>
+
+  <button onclick="calculateDiscount()">Calculate Discount</button>
+
+  <div id="result"></div>
+</div>
+
+<div class="card">
+  <h2>How Pricing Is Calculated</h2>
+  <ul>
+    <li>Expiry risk based on remaining shelf life</li>
+    <li>Demand inferred from historical sales data</li>
+    <li>Category & product behavior</li>
+    <li>Time, climate & location context</li>
+  </ul>
+</div>
+
+<script>
+/* -----------------------------
+   PRODUCT MASTER (Dataset-based)
+------------------------------ */
+const productsByCategory = {
+  dairy: ["Milk", "Paneer", "Curd", "Cheese"],
+  bakery: ["Bread", "Cake", "Bun"],
+  produce: ["Tomato", "Apple", "Banana"],
+  packaged: ["Biscuits", "Chips", "Namkeen"]
+};
+
+/* -----------------------------
+   DEMAND BASE (From Dataset)
+------------------------------ */
+const baseCategoryDemand = {
+  dairy: 8,
+  bakery: 6,
+  produce: 7,
+  packaged: 4
+};
+
+const productDemandWeight = {
+  milk: 1.2,
+  paneer: 1.1,
+  curd: 1.0,
+  cheese: 0.9,
+  bread: 1.0,
+  cake: 0.9,
+  bun: 1.0,
+  tomato: 1.1,
+  apple: 1.0,
+  banana: 1.2,
+  biscuits: 0.8,
+  chips: 0.7,
+  namkeen: 0.8
+};
+
+/* -----------------------------
+   CONTEXTUAL FACTORS (AUTO)
+------------------------------ */
+// Time of day
+const hour = new Date().getHours();
+const timeMultiplier =
+  hour >= 18 ? 1.2 :
+  hour >= 10 ? 1.0 : 0.8;
+
+// Festival (demo-ready logic)
+const festivalMultiplier = 1.0; // change to 1.3 during festivals
+
+// Climate / season
+const month = new Date().getMonth();
+const climateMultiplier =
+  month >= 3 && month <= 6 ? 1.15 :
+  month >= 11 || month <= 1 ? 0.9 : 1.0;
+
+// Location (fixed per store)
+const locationMultiplier = 1.2; // urban
+
+/* -----------------------------
+   UI HELPERS
+------------------------------ */
+function updateProducts() {
+  const category = document.getElementById("category").value;
+  const productSelect = document.getElementById("product");
+
+  productSelect.innerHTML = "";
+  productsByCategory[category].forEach(p => {
+    const option = document.createElement("option");
+    option.value = p.toLowerCase();
+    option.text = p;
+    productSelect.appendChild(option);
+  });
+}
+
+// Initial load
+updateProducts();
+
+/* -----------------------------
+   CORE PRICING LOGIC
+------------------------------ */
+function calculateDiscount() {
+  const expiryDays = Number(document.getElementById("expiryDays").value);
+  const category = document.getElementById("category").value;
+  const product = document.getElementById("product").value;
+
+  if (!expiryDays) {
+    document.getElementById("result").innerText =
+      "Please enter days to expiry.";
+    return;
+  }
+
+  // Expiry risk
+  const expiryRisk =
+    expiryDays <= 3 ? 1.0 :
+    expiryDays <= 7 ? 0.7 :
+    expiryDays <= 14 ? 0.4 : 0.2;
+
+  // Demand score (AUTO)
+  const demandScore =
+    baseCategoryDemand[category] *
+    productDemandWeight[product] *
+    timeMultiplier *
+    festivalMultiplier *
+    climateMultiplier *
+    locationMultiplier;
+
+  // Category sensitivity
+  const categoryWeight = {
+    dairy: 1.2,
+    bakery: 1.1,
+    produce: 1.0,
+    packaged: 0.7
+  }[category];
+
+  // Final discount
+  let discount =
+    expiryRisk *
+    categoryWeight *
+    (1 / Math.log1p(demandScore)) *
+    100;
+
+  discount = Math.min(Math.max(discount, 5), 60);
+
+  document.getElementById("result").innerText =
+    "Recommended Discount: " + discount.toFixed(2) + "%";
+}
+</script>
+
+</body>
+</html>
