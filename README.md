@@ -1,7 +1,7 @@
 Dynamic Expiry Pricing System
 
 Live Demo:
-file:///C:/Users/admin/OneDrive/Desktop/dynamic-expiry-pricing-firebase/public/index.html
+https://dynamic-expiry-pricing.web.app
 
 Description:
 AI-driven dynamic discounting system that reduces retail waste
